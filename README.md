@@ -1,3 +1,13 @@
+# THIS IS A CUSTOM REPOSITORY OF THE SDG REPOSITORY MADE BY INSTRUCTLAB
+Customized Pipeline: src/instructlab/sdg/pipelines/custom/knowledge.yaml
+Customized Config: src/instructlab/sdg/configs/knowledge
+
+# Files updated
+src/instructlab/sdg/pipelines/custom/knowledge.yaml
+src/instructlab/sdg/configs/knowledge/evaluate_faithfulness_custom.yaml
+src/instructlab/sdg/configs/knowledge/evaluate_question_custom.yaml
+src/instructlab/sdg/configs/knowledge/generate_questions_responses.yaml
+
 # Synthetic Data Generation (SDG)
 
 ![Lint](https://github.com/instructlab/sdg/actions/workflows/lint.yml/badge.svg?branch=main)
