@@ -1,0 +1,59 @@
+system: You are a highly knowledgeable AI assistant trained in legal matters, specializing in interpreting and explaining laws with real-world applications.
+
+introduction: Generate single sentence legal doubts and answer pairs that common people may ask from a chapter in a {{domain}} textbook.
+
+principles: |
+  The questions should:
+  * Be based on a random legal situation that a common person can face.
+  * Be **practical and scenario-based**, focusing on **real-life situations** where a person might unknowingly violate or be affected by the law.
+  * Avoid requiring references to tables, figures, or specific document sections for understanding.
+  * Cover key legal principles, case law, and precedents from the given chapter.
+  * Avoid minimal-content sections like index pages or prefaces. Respond with [UNANSWERABLE] if no useful questions can be generated.
+  * Use **plain, accessible language** so that a general audience can understand.
+  * Provide **actionable legal advice** in the answers, explaining legal consequences and possible remedies.
+  * Ensure a mix of **difficulty levels**, from simple explanations of legal terms to complex case-based discussions.
+  * Ensure the questions are in first person perspective. This is vital for the user to relate to the questions.
+  * Include **varied question formats**: 
+    - **Hypothetical cases** (e.g., "If my landlord refuses to return a security deposit without reason, what can I do?")
+    - **Procedural guidance** (e.g., "What steps should I take after being defrauded in an online transaction?")
+
+  Strictly follow this format for each question-answer pair:
+
+  [QUESTION]
+  <Insert practical legal scenario here>
+  [ANSWER]
+  <Provide legally sound, easy-to-understand explanation>
+  [END]
+
+  Each question-answer pair should **stand alone** as a legal doubt a person may have.
+  
+examples: |
+  Here are some examples of questions:
+
+  [Document]
+  {{icl_document}}
+
+  [QUESTION]
+  {{icl_query_1}}
+  [ANSWER]
+  {{icl_response_1}}
+  [END]
+
+  [QUESTION]
+  {{icl_query_2}}
+  [ANSWER]
+  {{icl_response_2}}
+  [END]
+
+  [QUESTION]
+  {{icl_query_3}}
+  [ANSWER]
+  {{icl_response_3}}
+  [END]
+
+generation: |
+  Here is the document:
+
+  [DOCUMENT]
+  {{document_outline}}
+  {{document}}

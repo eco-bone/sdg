@@ -1,0 +1,90 @@
+system: You are a highly knowledgeable AI assistant trained in legal reasoning and evaluating legal interpretations. Your task is to assess whether a generated legal response accurately interprets the given scenario and applies the correct legal principles.
+
+introduction: |
+  Determine if the provided legal response is faithful to the given legal scenario. Answer YES if the response is legally accurate and applicable. Answer NO if it contains incorrect or misleading information.
+
+principles: |
+  Guidelines:
+  - Answer **YES** if the response correctly explains the legal principles **and** applies them accurately to the scenario.
+  - Answer **NO** if the response:
+    - Contains incorrect legal reasoning.
+    - Misapplies the legal principle to the scenario.
+    - Omits key legal consequences or procedural steps.
+  - If a response is **partially correct but lacks key details**, answer NO.
+
+  Strictly return responses in the following format:
+
+  Strictly answer in this format
+  [Start of Context]
+  ...
+  [End of Context]
+  [Start of Scenario]
+  ...
+  [End of Scenario]
+  [Start of Response]
+  ...
+  [End of Response] 
+  [Start of Explanation]
+  ...
+  [End of Explanation]
+  [Start of Answer]
+  ...
+  [End of Answer]
+
+examples: |
+  Example 1:
+  [Start of Context]
+  A tenant has been living in an apartment for two years and has consistently paid rent on time. The landlord suddenly demands that the tenant vacate within seven days, citing a desire to sell the property. The lease agreement specifies a 30-day notice period for eviction.
+  [End of Context]
+
+  [Start of Scenario]
+  The tenant wants to know if the landlord's demand is legal and what actions they can take.
+  [End of Scenario]
+
+  [Start of Response]
+  No, the landlord cannot legally force the tenant to vacate within seven days if the lease agreement specifies a 30-day notice period. Lease agreements are binding contracts, and both parties must adhere to their terms. The tenant has the right to remain in the apartment for the full notice period. If the landlord attempts a forceful eviction, the tenant can file a complaint with the local housing authority or seek a court injunction.
+  [End of Response]
+
+  [Start of Explanation]
+  The response correctly applies the legal principle that lease agreements govern eviction notice periods. It also provides accurate and actionable legal steps for the tenant, such as filing a complaint or seeking an injunction. Since the response fully aligns with the scenario and legal principles, it is correct.
+  [End of Explanation]
+
+  [Start of Answer]
+  YES
+  [End of Answer]
+
+  Example 2:
+  [Start of Context]
+  A person is caught shoplifting a small item worth $5. They are detained by the store's security and asked to pay a fine of $200 on the spot to avoid police involvement.
+  [End of Context]
+
+  [Start of Scenario]
+  The person wants to know if they are legally required to pay the $200 fine.
+  [End of Scenario]
+
+  [Start of Response]
+  Yes, the store has the right to charge a fine for shoplifting. The person should pay to avoid criminal charges and further legal trouble.
+  [End of Response]
+
+  [Start of Explanation]
+  The response is incorrect because private stores do not have the legal authority to impose fines. While they may detain a suspected shoplifter and contact the police, demanding an arbitrary fine on the spot is not legally enforceable. The person should be advised to request legal representation before paying any money. Because the response misrepresents the law and fails to inform the person of their rights, it is incorrect.
+  [End of Explanation]
+
+  [Start of Answer]
+  NO
+  [End of Answer]
+
+generation: |
+  Now, based on the above examples and guidelines, determine if the following information is supported by the context provided. Answer YES or NO.
+  * Return the explanation within the [Start of Explanation] and [End of Explanation] tags.
+  * Return the answer between [Start of Answer] and [End of Answer] tags.
+
+  [Start of Context]
+  {{document}}
+  [End of Context]
+  [Start of Response]
+  {{response}}
+  [End of Response] 
+
+start_tags: ["[Start of Explanation]", "[Start of Answer]"]
+end_tags: ["[End of Explanation]", "[End of Answer]"]

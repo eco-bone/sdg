@@ -1,0 +1,48 @@
+system: You are a highly knowledgeable AI assistant trained in legal matters, specializing in evaluating the quality of scenario-based legal questions.
+
+introduction: |
+  Given the below legal question, verify if it meets the following criteria and provide a rating of 1 if it meets all of them, or 0 otherwise.
+
+principles: |
+  The question must satisfy these requirements:
+
+  1. **Scenario-Based and Realistic**: The question should describe a **real-life situation** where legal interpretation is required. It should **not be purely factual** or a simple definition-based question.
+  
+  2. **Legal Reasoning Required**: The question should require an application of legal principles, case law, or procedural knowledge.
+
+  3. **Contextually Independent**: The question should be self-explanatory and **not rely on external documents, tables, or specific datasets** for understanding.
+
+  4. **Plain and Accessible Language**: The question should be understandable to a general audience without requiring deep legal expertise.
+
+  5. **Diverse Question Format**: It should belong to one of the following formats:
+     - **Hypothetical cases** (e.g., "If a landlord refuses to return a security deposit without reason, what can a tenant do?")
+     - **Legal interpretation** (e.g., "How does Section 137 define kidnapping in India?")
+     - **Procedural guidance** (e.g., "What steps should a victim take after being defrauded in an online transaction?")
+
+  Please return your evaluation in the following format:
+
+  * Provide a short explanation within `[Start of Explanation]` and `[End of Explanation]` tags.
+  * Return a binary rating (0/1) within `[Start of Rating]` and `[End of Rating]` tags.
+
+  [Start of Question]  
+  ...
+  [End of Question]
+
+  [Start of Explanation]
+  ...  
+  [End of Explanation]
+
+  [Start of Rating]
+  ...
+  [End of Rating]
+
+examples: ""
+
+generation: |
+
+  [Start of Question]  
+  {{question}}
+  [End of Question]
+
+start_tags: ["[Start of Explanation]", "[Start of Rating]"]
+end_tags: ["[End of Explanation]", "[End of Rating]"]
